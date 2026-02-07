@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <defs>
+    <linearGradient id="goldGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0c068"/>
+      <stop offset="50%" style="stop-color:#c9a84c"/>
+      <stop offset="100%" style="stop-color:#b8923a"/>
+    </linearGradient>
+    <linearGradient id="ringGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="40%" style="stop-color:#f0f0f0"/>
+      <stop offset="100%" style="stop-color:#c9a84c"/>
+    </linearGradient>
+    <linearGradient id="textGradF" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="50%" style="stop-color:#e0c068"/>
+      <stop offset="100%" style="stop-color:#ffffff"/>
+    </linearGradient>
+  </defs>
+  <!-- Logo icon (scaled down) -->
+  <g transform="translate(10, 8) scale(0.52)">
+    <circle cx="100" cy="100" r="88" fill="none" stroke="url(#ringGradF)" stroke-width="5"/>
+    <circle cx="100" cy="100" r="68" fill="#1a1535"/>
+    <circle cx="52" cy="100" r="5" fill="url(#goldGradF)"/>
+    <rect x="66" y="82" width="7" height="36" rx="3.5" fill="url(#goldGradF)"/>
+    <rect x="80" y="72" width="7" height="56" rx="3.5" fill="url(#goldGradF)"/>
+    <rect x="94" y="64" width="7" height="72" rx="3.5" fill="url(#goldGradF)"/>
+    <rect x="108" y="72" width="7" height="56" rx="3.5" fill="url(#goldGradF)"/>
+    <rect x="122" y="82" width="7" height="36" rx="3.5" fill="url(#goldGradF)"/>
+    <circle cx="143" cy="100" r="5" fill="url(#goldGradF)"/>
+  </g>
+  <!-- ODESSIS text -->
+  <text x="130" y="78" font-family="'Space Grotesk', sans-serif" font-size="52" font-weight="700" letter-spacing="0.12em" fill="url(#textGradF)">ODESSIS</text>
+  <!-- Decorative line -->
+  <line x1="130" y1="92" x2="520" y2="92" stroke="url(#goldGradF)" stroke-width="1.5"/>
+  <!-- Endpoint dots -->
+  <circle cx="130" cy="92" r="4" fill="url(#goldGradF)"/>
+  <circle cx="520" cy="92" r="4" fill="url(#goldGradF)"/>
+</svg>
