@@ -295,6 +295,28 @@
     }
 
     // ========================================
+    // NOTIFY FORM
+    // ========================================
+    var notifyForm = document.getElementById('notify-form');
+
+    if (notifyForm) {
+        notifyForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var input = notifyForm.querySelector('.notify-input');
+            var btn = notifyForm.querySelector('.notify-btn');
+            if (input && input.value.trim()) {
+                btn.textContent = 'Subscribed!';
+                btn.style.background = 'var(--color-success)';
+                input.value = '';
+                setTimeout(function () {
+                    btn.textContent = 'Notify Me';
+                    btn.style.background = '';
+                }, 3000);
+            }
+        });
+    }
+
+    // ========================================
     // BACK TO TOP
     // ========================================
     var backToTop = document.querySelector('.back-to-top');

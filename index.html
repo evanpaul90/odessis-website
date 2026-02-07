@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odessis | Music Production</title>
-    <meta name="description" content="Odessis is a premier music production company specializing in artist production, recording, mixing, mastering, and sound design. Crafting sonic experiences that move audiences.">
+    <title>Odessis | Where Stories Find Their Sound</title>
+    <meta name="description" content="Odessis is a next-gen Konkani music label evolving into a full-fledged movie studio — creating original sounds, cinematic narratives, and culture-driven entertainment for a global audience.">
+    <meta name="keywords" content="Odessis, Konkani music, Goan music, music label, Konkani songs, Mad Ape, Konkani entertainment, Goa music production">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Odessis | Music Production">
-    <meta property="og:description" content="Premier music production company. Crafting sonic experiences that move audiences.">
+    <meta property="og:title" content="Odessis | Where Stories Find Their Sound">
+    <meta property="og:description" content="A next-gen Konkani music label creating original sounds, cinematic narratives, and culture-driven entertainment for a global audience.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://odessis.com">
+    <meta property="og:url" content="https://odessis.in">
+    <meta property="og:image" content="assets/images/logo-icon.svg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,12 +45,16 @@
     <!-- Navigation -->
     <header class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">ODESS<span>I</span>S</a>
+            <a href="#hero" class="nav-logo">
+                <img src="assets/images/logo-icon.svg" alt="Odessis" class="nav-logo-icon">
+                <span class="nav-logo-text">ODESS<span class="accent">I</span>S</span>
+            </a>
 
             <nav class="nav-links" aria-label="Main navigation">
                 <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#services" class="nav-link" data-section="services">Services</a>
-                <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
+                <a href="#music" class="nav-link" data-section="music">Music</a>
+                <a href="#artists" class="nav-link" data-section="artists">Artists</a>
+                <a href="#listen" class="nav-link" data-section="listen">Listen</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
             </nav>
 
@@ -63,8 +69,9 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#music" class="nav-link">Music</a>
+        <a href="#artists" class="nav-link">Artists</a>
+        <a href="#listen" class="nav-link">Listen</a>
         <a href="#contact" class="nav-link">Contact</a>
     </div>
 
@@ -74,18 +81,29 @@
             <canvas class="hero-canvas" id="waveform-canvas" aria-hidden="true"></canvas>
 
             <div class="hero-content">
-                <h1 class="hero-title">ODESSIS</h1>
+                <img src="assets/images/logo-full.svg" alt="Odessis" class="hero-logo-img">
                 <p class="hero-tagline">
-                    <span class="word">Crafting</span>
-                    <span class="word">Sonic</span>
-                    <span class="word">Experiences</span>
+                    <span class="word">Where</span>
+                    <span class="word">Stories</span>
+                    <span class="word">Find</span>
+                    <span class="word">Their</span>
+                    <span class="word">Sound</span>
                 </p>
-                <a href="#portfolio" class="hero-cta">
-                    Explore Our Work
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
+                <p class="hero-sub">Stories Born by the Sea, Built for the World</p>
+                <div class="hero-ctas">
+                    <a href="#music" class="hero-cta">
+                        Explore Our Music
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@odessis" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        YouTube
+                    </a>
+                </div>
             </div>
 
             <div class="hero-scroll-indicator" aria-hidden="true">
@@ -99,27 +117,27 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <div class="section-label reveal">About Us</div>
-                        <h2 class="section-title reveal" data-delay="100">Where Sound<br>Meets Vision</h2>
+                        <div class="section-label reveal">Who We Are</div>
+                        <h2 class="section-title reveal" data-delay="100">A New Wave of<br>Konkani Sound</h2>
                         <p class="reveal" data-delay="200">
-                            Odessis was born from a relentless passion for sound. We are a collective of producers, engineers, and sonic architects dedicated to pushing the boundaries of what music can be. From intimate vocal sessions to full-scale orchestral productions, every project receives our undivided creative attention.
+                            Odessis is a next-gen music label evolving into a full-fledged movie studio &mdash; creating original Konkani sounds, cinematic narratives, and culture-driven entertainment for a global audience.
                         </p>
                         <p class="reveal" data-delay="300">
-                            Our studio is more than a room full of equipment&mdash;it's a space where artists feel inspired, ideas take shape, and raw emotion is captured in its purest form. We believe great music isn't just heard. It's felt.
+                            Born from the soul of Goa, Odessis bridges tradition with innovation. We believe the Konkani language and its stories deserve a world stage &mdash; and we're building that platform through music, film, and creative storytelling.
                         </p>
 
                         <div class="about-stats reveal" data-delay="400">
                             <div class="stat">
-                                <div class="stat-number">200+</div>
-                                <div class="stat-label">Projects</div>
+                                <div class="stat-number">1.1K+</div>
+                                <div class="stat-label">Subscribers</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-number">12</div>
-                                <div class="stat-label">Years</div>
+                                <div class="stat-number">23+</div>
+                                <div class="stat-label">Releases</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Artists</div>
+                                <div class="stat-number">50K+</div>
+                                <div class="stat-label">Views</div>
                             </div>
                         </div>
                     </div>
@@ -127,11 +145,7 @@
                     <div class="about-visual reveal-right" data-delay="200">
                         <div class="about-image-wrapper">
                             <div class="about-image-placeholder">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 18V5l12-2v13"/>
-                                    <circle cx="6" cy="18" r="3"/>
-                                    <circle cx="18" cy="16" r="3"/>
-                                </svg>
+                                <img src="assets/images/logo-icon.svg" alt="Odessis Logo" class="about-logo-icon">
                             </div>
                         </div>
                     </div>
@@ -139,18 +153,65 @@
             </div>
         </section>
 
-        <!-- ==================== SERVICES ==================== -->
+        <!-- ==================== WHAT WE DO ==================== -->
         <section id="services" class="services">
             <div class="container">
                 <div class="section-header">
                     <div class="section-label reveal">What We Do</div>
-                    <h2 class="section-title reveal" data-delay="100">Our Services</h2>
-                    <p class="section-subtitle reveal" data-delay="200">End-to-end music production services tailored to bring your creative vision to life.</p>
+                    <h2 class="section-title reveal" data-delay="100">Our Vision</h2>
+                    <p class="section-subtitle reveal" data-delay="200">From original music to cinematic storytelling, we're building a creative ecosystem rooted in Konkani culture.</p>
                 </div>
 
                 <div class="services-grid">
-                    <!-- Music Production -->
+                    <!-- Music Label -->
                     <div class="service-card reveal" data-delay="100">
+                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18V5l12-2v13"/>
+                            <circle cx="6" cy="18" r="3"/>
+                            <circle cx="18" cy="16" r="3"/>
+                            <path d="M28 8h12M28 14h8M28 20h10"/>
+                        </svg>
+                        <h3>Music Label</h3>
+                        <p>Producing and releasing original Konkani music across all major streaming platforms. From soulful ballads to high-energy dance tracks.</p>
+                    </div>
+
+                    <!-- Film & Cinema -->
+                    <div class="service-card reveal" data-delay="200">
+                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="6" y="10" width="36" height="24" rx="2"/>
+                            <line x1="6" y1="16" x2="42" y2="16"/>
+                            <line x1="14" y1="10" x2="14" y2="16"/>
+                            <line x1="22" y1="10" x2="22" y2="16"/>
+                            <line x1="30" y1="10" x2="30" y2="16"/>
+                            <polygon points="20,22 20,30 28,26" fill="currentColor" stroke="none"/>
+                        </svg>
+                        <h3>Film & Cinema</h3>
+                        <p>Evolving into a movie studio creating cinematic narratives that bring Konkani stories to life on the big screen and streaming platforms.</p>
+                    </div>
+
+                    <!-- Artist Development -->
+                    <div class="service-card reveal" data-delay="300">
+                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M24 4l4 8 8 1.5-6 5.5 1.5 8L24 22l-7.5 5 1.5-8-6-5.5 8-1.5z"/>
+                            <path d="M12 36c0-4 5.5-7 12-7s12 3 12 7"/>
+                            <line x1="24" y1="40" x2="24" y2="44"/>
+                        </svg>
+                        <h3>Artist Development</h3>
+                        <p>Nurturing Konkani artists, helping them find their voice and reach audiences beyond Goa's shores through production, branding, and distribution.</p>
+                    </div>
+
+                    <!-- Cultural Storytelling -->
+                    <div class="service-card reveal" data-delay="400">
+                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 24c4-8 8-12 12-12s8 12 12 12 8-12 12-12"/>
+                            <path d="M6 30c4-6 8-8 12-8s8 8 12 8 8-8 12-8" opacity="0.4"/>
+                        </svg>
+                        <h3>Cultural Storytelling</h3>
+                        <p>Preserving and modernizing Konkani heritage through music, visuals, and narrative-driven content that resonates across generations.</p>
+                    </div>
+
+                    <!-- Music Production -->
+                    <div class="service-card reveal" data-delay="500">
                         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="6" y="14" width="36" height="20" rx="2"/>
                             <line x1="14" y1="18" x2="14" y2="30"/>
@@ -160,292 +221,289 @@
                             <line x1="38" y1="22" x2="38" y2="26"/>
                         </svg>
                         <h3>Music Production</h3>
-                        <p>Full-cycle production from concept to final master. We shape your sound with meticulous attention to arrangement, instrumentation, and sonic texture.</p>
+                        <p>Full-cycle production from concept to final master. State-of-the-art recording, mixing, mastering, and sound design services.</p>
                     </div>
 
-                    <!-- Recording -->
-                    <div class="service-card reveal" data-delay="200">
-                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="20" y="4" width="8" height="24" rx="4"/>
-                            <path d="M12 20v4a12 12 0 0 0 24 0v-4"/>
-                            <line x1="24" y1="36" x2="24" y2="44"/>
-                            <line x1="16" y1="44" x2="32" y2="44"/>
-                        </svg>
-                        <h3>Recording</h3>
-                        <p>State-of-the-art recording environment with premium analog and digital gear. Capture every nuance of your performance with clarity and warmth.</p>
-                    </div>
-
-                    <!-- Mixing & Mastering -->
-                    <div class="service-card reveal" data-delay="300">
-                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="10" y1="8" x2="10" y2="40"/>
-                            <line x1="19" y1="8" x2="19" y2="40"/>
-                            <line x1="28" y1="8" x2="28" y2="40"/>
-                            <line x1="37" y1="8" x2="37" y2="40"/>
-                            <circle cx="10" cy="28" r="3"/>
-                            <circle cx="19" cy="18" r="3"/>
-                            <circle cx="28" cy="32" r="3"/>
-                            <circle cx="37" cy="14" r="3"/>
-                        </svg>
-                        <h3>Mixing & Mastering</h3>
-                        <p>Precision mixing and mastering that brings depth, clarity, and punch to your tracks. Ready for streaming, vinyl, or broadcast.</p>
-                    </div>
-
-                    <!-- Sound Design -->
-                    <div class="service-card reveal" data-delay="400">
-                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 24c4-8 8-12 12-12s8 12 12 12 8-12 12-12"/>
-                            <path d="M6 30c4-6 8-8 12-8s8 8 12 8 8-8 12-8" opacity="0.4"/>
-                        </svg>
-                        <h3>Sound Design</h3>
-                        <p>Custom sound creation for any medium. From textural atmospheres to impactful FX, we design sounds that tell stories and evoke emotion.</p>
-                    </div>
-
-                    <!-- Film & TV Scoring -->
-                    <div class="service-card reveal" data-delay="500">
-                        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="6" y="10" width="36" height="24" rx="2"/>
-                            <line x1="6" y1="16" x2="42" y2="16"/>
-                            <line x1="14" y1="10" x2="14" y2="16"/>
-                            <line x1="22" y1="10" x2="22" y2="16"/>
-                            <line x1="30" y1="10" x2="30" y2="16"/>
-                            <polygon points="20,22 20,30 28,26" fill="currentColor" stroke="none"/>
-                        </svg>
-                        <h3>Film & TV Scoring</h3>
-                        <p>Cinematic compositions that elevate visual narratives. We create scores that amplify tension, emotion, and the storytelling power of your project.</p>
-                    </div>
-
-                    <!-- Artist Development -->
+                    <!-- Digital Distribution -->
                     <div class="service-card reveal" data-delay="600">
                         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M24 4l4 8 8 1.5-6 5.5 1.5 8L24 22l-7.5 5 1.5-8-6-5.5 8-1.5z"/>
-                            <path d="M12 36c0-4 5.5-7 12-7s12 3 12 7"/>
-                            <line x1="24" y1="40" x2="24" y2="44"/>
+                            <circle cx="24" cy="24" r="16"/>
+                            <path d="M24 8v32"/>
+                            <path d="M8 24h32"/>
+                            <path d="M24 8c-5 5-8 10-8 16s3 11 8 16"/>
+                            <path d="M24 8c5 5 8 10 8 16s-3 11-8 16"/>
                         </svg>
-                        <h3>Artist Development</h3>
-                        <p>Beyond production, we help artists refine their identity, build their catalog, and develop the sonic brand that sets them apart.</p>
+                        <h3>Global Distribution</h3>
+                        <p>Bringing Konkani music to the world through YouTube, Spotify, Apple Music, and every major digital platform.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== PORTFOLIO ==================== -->
-        <section id="portfolio" class="portfolio">
+        <!-- ==================== MUSIC / YOUTUBE ==================== -->
+        <section id="music" class="music">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-label reveal">Our Work</div>
-                    <h2 class="section-title reveal" data-delay="100">Featured Projects</h2>
-                    <p class="section-subtitle reveal" data-delay="200">A selection of recent productions spanning genres and mediums.</p>
+                    <div class="section-label reveal">Our Music</div>
+                    <h2 class="section-title reveal" data-delay="100">Latest Releases</h2>
+                    <p class="section-subtitle reveal" data-delay="200">Watch our latest tracks and music videos from the Odessis Lab.</p>
                 </div>
 
-                <div class="portfolio-filters reveal" data-delay="300">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="production">Production</button>
-                    <button class="filter-btn" data-filter="recording">Recording</button>
-                    <button class="filter-btn" data-filter="mixing">Mixing</button>
-                    <button class="filter-btn" data-filter="scoring">Scoring</button>
+                <!-- Featured Video -->
+                <div class="featured-video reveal" data-delay="300">
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/K35JJkGSOVg"
+                            title="Mogacho Uzo - Lorna | Odessis"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="featured-video-info">
+                        <h3>Mogacho Uzo - Lorna</h3>
+                        <p class="video-views">13K+ views</p>
+                    </div>
                 </div>
 
-                <div class="portfolio-grid">
-                    <!-- Project 1 -->
-                    <div class="portfolio-card reveal" data-delay="100" data-category="production">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <circle cx="12" cy="12" r="10"/>
-                                <circle cx="12" cy="12" r="3"/>
-                            </svg>
+                <!-- Video Grid -->
+                <div class="video-grid">
+                    <div class="video-card reveal" data-delay="100">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/zkLugGk5-X8"
+                                title="Uzvadd Gello | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Production</div>
-                            <h3 class="portfolio-card-title">Echoes of Tomorrow</h3>
-                            <p class="portfolio-card-artist">Nova Syndicate</p>
-                            <div class="audio-player" data-track="track-01">
-                                <button class="player-play" aria-label="Play Echoes of Tomorrow">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:40%"></span><span style="height:65%"></span><span style="height:85%"></span><span style="height:55%"></span><span style="height:95%"></span>
-                                        <span style="height:70%"></span><span style="height:45%"></span><span style="height:80%"></span><span style="height:60%"></span><span style="height:90%"></span>
-                                        <span style="height:50%"></span><span style="height:75%"></span><span style="height:40%"></span><span style="height:85%"></span><span style="height:65%"></span>
-                                        <span style="height:55%"></span><span style="height:95%"></span><span style="height:45%"></span><span style="height:70%"></span><span style="height:60%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Uzvadd Gello</h4>
+                            <p>12K+ views</p>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="portfolio-card reveal" data-delay="200" data-category="scoring">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="4" width="20" height="14" rx="1"/>
-                                <polygon points="9,8 9,14 15,11" fill="currentColor" opacity="0.3"/>
-                            </svg>
+                    <div class="video-card reveal" data-delay="200">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/yXJ5AToFyk8"
+                                title="Mad Ape's Aaz Amzo Diz | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Film Score</div>
-                            <h3 class="portfolio-card-title">Meridian</h3>
-                            <p class="portfolio-card-artist">Independent Film</p>
-                            <div class="audio-player" data-track="track-02">
-                                <button class="player-play" aria-label="Play Meridian">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:30%"></span><span style="height:50%"></span><span style="height:70%"></span><span style="height:90%"></span><span style="height:75%"></span>
-                                        <span style="height:55%"></span><span style="height:80%"></span><span style="height:95%"></span><span style="height:65%"></span><span style="height:45%"></span>
-                                        <span style="height:85%"></span><span style="height:60%"></span><span style="height:40%"></span><span style="height:70%"></span><span style="height:50%"></span>
-                                        <span style="height:90%"></span><span style="height:35%"></span><span style="height:75%"></span><span style="height:55%"></span><span style="height:80%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Aaz Amzo Diz - Mad Ape</h4>
+                            <p>11K+ views</p>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
-                    <div class="portfolio-card reveal" data-delay="300" data-category="mixing">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <path d="M12 3v18M8 7v10M4 10v4M16 5v14M20 9v6"/>
-                            </svg>
+                    <div class="video-card reveal" data-delay="300">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/dzTbr_wp0lU"
+                                title="Yo Baile Yo | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Mixing & Mastering</div>
-                            <h3 class="portfolio-card-title">Gravity Well</h3>
-                            <p class="portfolio-card-artist">Pale Circuits</p>
-                            <div class="audio-player" data-track="track-03">
-                                <button class="player-play" aria-label="Play Gravity Well">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:50%"></span><span style="height:80%"></span><span style="height:60%"></span><span style="height:95%"></span><span style="height:40%"></span>
-                                        <span style="height:70%"></span><span style="height:85%"></span><span style="height:55%"></span><span style="height:75%"></span><span style="height:90%"></span>
-                                        <span style="height:45%"></span><span style="height:65%"></span><span style="height:85%"></span><span style="height:50%"></span><span style="height:70%"></span>
-                                        <span style="height:60%"></span><span style="height:80%"></span><span style="height:45%"></span><span style="height:95%"></span><span style="height:55%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Yo Baile Yo</h4>
+                            <p>7.2K+ views</p>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
-                    <div class="portfolio-card reveal" data-delay="400" data-category="production">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <path d="M9 18V5l12-2v13"/>
-                                <circle cx="6" cy="18" r="3"/>
-                                <circle cx="18" cy="16" r="3"/>
-                            </svg>
+                    <div class="video-card reveal" data-delay="400">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/L5FWEG2lU9Y"
+                                title="Nach Kase Fanteak | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Production</div>
-                            <h3 class="portfolio-card-title">Neon Cathedral</h3>
-                            <p class="portfolio-card-artist">Iris Vox</p>
-                            <div class="audio-player" data-track="track-04">
-                                <button class="player-play" aria-label="Play Neon Cathedral">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:70%"></span><span style="height:45%"></span><span style="height:90%"></span><span style="height:60%"></span><span style="height:80%"></span>
-                                        <span style="height:35%"></span><span style="height:75%"></span><span style="height:95%"></span><span style="height:50%"></span><span style="height:65%"></span>
-                                        <span style="height:85%"></span><span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span>
-                                        <span style="height:45%"></span><span style="height:80%"></span><span style="height:60%"></span><span style="height:75%"></span><span style="height:50%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Nach Kase Fanteak</h4>
+                            <p>4.4K+ views</p>
                         </div>
                     </div>
 
-                    <!-- Project 5 -->
-                    <div class="portfolio-card reveal" data-delay="500" data-category="recording">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="4" y="2" width="16" height="20" rx="2"/>
-                                <circle cx="12" cy="14" r="4"/>
-                                <line x1="12" y1="6" x2="12" y2="6.01"/>
-                            </svg>
+                    <div class="video-card reveal" data-delay="500">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/1q66618PlFU"
+                                title="Odessis Track | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Recording</div>
-                            <h3 class="portfolio-card-title">Live at Studio One</h3>
-                            <p class="portfolio-card-artist">The Orchid Collective</p>
-                            <div class="audio-player" data-track="track-05">
-                                <button class="player-play" aria-label="Play Live at Studio One">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:55%"></span><span style="height:75%"></span><span style="height:40%"></span><span style="height:85%"></span><span style="height:65%"></span>
-                                        <span style="height:90%"></span><span style="height:50%"></span><span style="height:70%"></span><span style="height:80%"></span><span style="height:45%"></span>
-                                        <span style="height:95%"></span><span style="height:60%"></span><span style="height:35%"></span><span style="height:75%"></span><span style="height:85%"></span>
-                                        <span style="height:50%"></span><span style="height:70%"></span><span style="height:90%"></span><span style="height:40%"></span><span style="height:65%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Latest Release</h4>
+                            <p>Odessis Lab</p>
                         </div>
                     </div>
 
-                    <!-- Project 6 -->
-                    <div class="portfolio-card reveal" data-delay="600" data-category="scoring">
-                        <div class="portfolio-card-header">
-                            <svg class="card-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 2a10 10 0 0 1 0 20" fill="currentColor" opacity="0.1"/>
-                                <path d="M8 12h8M12 8v8"/>
-                            </svg>
+                    <div class="video-card reveal" data-delay="600">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/5UMFvIaqzoA"
+                                title="Odessis Track | Odessis"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-category">Film Score</div>
-                            <h3 class="portfolio-card-title">The Vanishing Point</h3>
-                            <p class="portfolio-card-artist">Documentary Series</p>
-                            <div class="audio-player" data-track="track-06">
-                                <button class="player-play" aria-label="Play The Vanishing Point">
-                                    <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                                    <svg class="icon-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" fill="currentColor"/><rect x="15" y="4" width="4" height="16" fill="currentColor"/></svg>
-                                </button>
-                                <div class="player-info">
-                                    <div class="player-waveform">
-                                        <span style="height:60%"></span><span style="height:40%"></span><span style="height:80%"></span><span style="height:55%"></span><span style="height:95%"></span>
-                                        <span style="height:70%"></span><span style="height:45%"></span><span style="height:85%"></span><span style="height:65%"></span><span style="height:50%"></span>
-                                        <span style="height:90%"></span><span style="height:75%"></span><span style="height:35%"></span><span style="height:80%"></span><span style="height:60%"></span>
-                                        <span style="height:70%"></span><span style="height:95%"></span><span style="height:45%"></span><span style="height:55%"></span><span style="height:85%"></span>
-                                    </div>
-                                    <div class="player-progress">
-                                        <div class="player-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <div class="player-time">0:00</div>
-                            </div>
+                        <div class="video-card-info">
+                            <h4>Featured Track</h4>
+                            <p>Odessis Lab</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="music-cta reveal" data-delay="300">
+                    <a href="https://www.youtube.com/@odessis" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        View All on YouTube
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ARTISTS ==================== -->
+        <section id="artists" class="artists">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label reveal">Our Artists</div>
+                    <h2 class="section-title reveal" data-delay="100">The Voices of Odessis</h2>
+                    <p class="section-subtitle reveal" data-delay="200">Meet the talent behind the sound. Artists pushing Konkani music forward.</p>
+                </div>
+
+                <div class="artists-grid">
+                    <div class="artist-card reveal" data-delay="100">
+                        <div class="artist-avatar">
+                            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="40" cy="30" r="14"/>
+                                <path d="M12 70c0-12 12-20 28-20s28 8 28 20"/>
+                            </svg>
+                        </div>
+                        <h3>Mad Ape</h3>
+                        <p class="artist-role">Primary Artist</p>
+                        <p class="artist-desc">Pioneering Konkani hip-hop and dance music with tracks like "Aaz Amzo Diz" and "Yo Baile Yo."</p>
+                    </div>
+
+                    <div class="artist-card reveal" data-delay="200">
+                        <div class="artist-avatar">
+                            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="40" cy="30" r="14"/>
+                                <path d="M12 70c0-12 12-20 28-20s28 8 28 20"/>
+                            </svg>
+                        </div>
+                        <h3>Lorna</h3>
+                        <p class="artist-role">Featured Artist</p>
+                        <p class="artist-desc">The voice behind "Mogacho Uzo" — our most-viewed release with 13K+ views and counting.</p>
+                    </div>
+
+                    <div class="artist-card reveal" data-delay="300">
+                        <div class="artist-avatar">
+                            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="40" cy="30" r="14"/>
+                                <path d="M12 70c0-12 12-20 28-20s28 8 28 20"/>
+                            </svg>
+                        </div>
+                        <h3>Coming Soon</h3>
+                        <p class="artist-role">New Artists</p>
+                        <p class="artist-desc">We're always looking for fresh Konkani voices. If you have a story to tell through music, reach out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== LISTEN / STREAMING ==================== -->
+        <section id="listen" class="listen">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label reveal">Listen Everywhere</div>
+                    <h2 class="section-title reveal" data-delay="100">Stream Our Music</h2>
+                    <p class="section-subtitle reveal" data-delay="200">Find Odessis on all major platforms. Follow us to stay updated with every new release.</p>
+                </div>
+
+                <div class="streaming-grid reveal" data-delay="300">
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@odessis" target="_blank" rel="noopener noreferrer" class="streaming-card streaming-youtube">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="streaming-icon">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+                            <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/>
+                        </svg>
+                        <div class="streaming-info">
+                            <h3>YouTube</h3>
+                            <p>1.15K Subscribers</p>
+                        </div>
+                        <span class="streaming-badge live">Active</span>
+                    </a>
+
+                    <!-- Spotify -->
+                    <div class="streaming-card streaming-spotify coming-soon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="streaming-icon">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                        <div class="streaming-info">
+                            <h3>Spotify</h3>
+                            <p>Coming Soon</p>
+                        </div>
+                        <span class="streaming-badge soon">Soon</span>
+                    </div>
+
+                    <!-- Apple Music -->
+                    <div class="streaming-card streaming-apple coming-soon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="streaming-icon">
+                            <path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 0 0-1.877-.726 10.496 10.496 0 0 0-1.564-.15c-.073-.005-.146-.01-.22-.015H5.988c-.073.005-.146.01-.22.015a10.487 10.487 0 0 0-1.564.15 5.022 5.022 0 0 0-1.877.726C1.209 1.744.464 2.744.147 4.054a9.23 9.23 0 0 0-.24 2.19c-.004.073-.005.146-.007.22v11.073c.002.073.003.146.007.22a9.23 9.23 0 0 0 .24 2.19c.317 1.31 1.062 2.31 2.18 3.043a5.022 5.022 0 0 0 1.877.726c.513.085 1.036.13 1.564.15.073.005.146.01.22.015h12.024c.073-.005.146-.01.22-.015.528-.02 1.051-.065 1.564-.15a5.022 5.022 0 0 0 1.877-.726c1.118-.733 1.863-1.733 2.18-3.043a9.23 9.23 0 0 0 .24-2.19c.004-.073.005-.146.007-.22V6.344a1.77 1.77 0 0 0-.007-.22zm-7.684 4.97v5.652c0 .648-.168 1.208-.565 1.685-.397.477-.927.758-1.545.843-.228.032-.457.048-.685.045a2.233 2.233 0 0 1-1.59-.615 1.775 1.775 0 0 1-.482-1.34c.037-.638.37-1.116.883-1.44.332-.21.7-.344 1.074-.434.392-.095.79-.157 1.18-.248.184-.043.335-.132.41-.318.05-.127.065-.263.065-.399V9.388c0-.2-.04-.39-.18-.54-.14-.148-.32-.2-.52-.18l-4.8.96c-.12.025-.24.075-.34.15-.14.105-.19.26-.2.43v7.532c0 .572-.12 1.11-.47 1.587-.397.54-.937.84-1.59.937-.178.027-.357.04-.535.04a2.29 2.29 0 0 1-1.647-.6 1.737 1.737 0 0 1-.512-1.29c.024-.67.37-1.163.907-1.502.31-.195.657-.32 1.013-.41.393-.1.79-.168 1.182-.26.224-.053.4-.162.48-.393.04-.115.055-.237.056-.36V7.093c0-.297.053-.58.217-.83.207-.314.508-.488.87-.553l5.6-1.12c.157-.032.317-.05.477-.04.39.02.677.217.82.582.063.16.085.33.085.5z"/>
+                        </svg>
+                        <div class="streaming-info">
+                            <h3>Apple Music</h3>
+                            <p>Coming Soon</p>
+                        </div>
+                        <span class="streaming-badge soon">Soon</span>
+                    </div>
+
+                    <!-- Instagram -->
+                    <a href="#" class="streaming-card streaming-instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="streaming-icon">
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                        <div class="streaming-info">
+                            <h3>Instagram</h3>
+                            <p>Follow Us</p>
+                        </div>
+                        <span class="streaming-badge">Social</span>
+                    </a>
+                </div>
+
+                <!-- Notify Me -->
+                <div class="notify-section reveal" data-delay="400">
+                    <h3>Get Notified on New Releases</h3>
+                    <p>Be the first to know when we drop new music, announce events, or launch on new platforms.</p>
+                    <form class="notify-form" id="notify-form">
+                        <input type="email" placeholder="your@email.com" class="notify-input" required>
+                        <button type="submit" class="notify-btn">Notify Me</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -456,9 +514,9 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <div class="section-label reveal">Get In Touch</div>
-                        <h2 class="reveal" data-delay="100">Let's Create Something<br>Extraordinary</h2>
+                        <h2 class="reveal" data-delay="100">Let's Create<br>Something Together</h2>
                         <p class="reveal" data-delay="200">
-                            Whether you're an artist looking for a producer, a filmmaker seeking the perfect score, or a brand in need of a sonic identity&mdash;we'd love to hear from you.
+                            Whether you're an artist looking for a label, a brand seeking collaboration, or a fan who wants to connect &mdash; we'd love to hear from you.
                         </p>
 
                         <div class="reveal" data-delay="300">
@@ -467,34 +525,28 @@
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
-                                <a href="mailto:hello@odessis.com">hello@odessis.com</a>
+                                <a href="mailto:evan@odessis.in">evan@odessis.in</a>
                             </div>
                             <div class="contact-detail">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
-                                <span>Los Angeles, CA</span>
+                                <span>Udupi, Karnataka, India</span>
                             </div>
                         </div>
 
                         <div class="social-links reveal" data-delay="400">
+                            <a href="https://www.youtube.com/@odessis" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
                             <a href="#" class="social-link" aria-label="Instagram">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                                     <circle cx="12" cy="12" r="5"/>
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link" aria-label="YouTube">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/>
-                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link" aria-label="SoundCloud">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 18v-4M7 18v-8M11 18V6M15 18v-6M19 18v-4"/>
                                 </svg>
                             </a>
                             <a href="#" class="social-link" aria-label="Spotify">
@@ -523,22 +575,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="project-type">Project Type</label>
+                                <label for="project-type">I'm interested in</label>
                                 <select id="project-type" name="project-type" class="form-select" required>
-                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="artist">Joining as an Artist</option>
+                                    <option value="collab">Collaboration</option>
                                     <option value="production">Music Production</option>
-                                    <option value="recording">Recording</option>
-                                    <option value="mixing">Mixing & Mastering</option>
-                                    <option value="sound-design">Sound Design</option>
-                                    <option value="scoring">Film/TV Scoring</option>
+                                    <option value="business">Business Inquiry</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <span class="form-error">Please select a project type</span>
+                                <span class="form-error">Please select an option</span>
                             </div>
 
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us your story..." required></textarea>
                                 <span class="form-error">Please enter a message</span>
                             </div>
 
@@ -568,17 +619,23 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <a href="#hero" class="footer-logo">ODESS<span>I</span>S</a>
+                <a href="#hero" class="footer-logo">
+                    <img src="assets/images/logo-icon.svg" alt="Odessis" class="footer-logo-icon">
+                    <span>ODESS<span class="accent">I</span>S</span>
+                </a>
 
                 <nav class="footer-links">
                     <a href="#about" class="footer-link">About</a>
-                    <a href="#services" class="footer-link">Services</a>
-                    <a href="#portfolio" class="footer-link">Portfolio</a>
+                    <a href="#music" class="footer-link">Music</a>
+                    <a href="#artists" class="footer-link">Artists</a>
+                    <a href="#listen" class="footer-link">Listen</a>
                     <a href="#contact" class="footer-link">Contact</a>
                 </nav>
 
+                <p class="footer-tagline">Stories Born by the Sea, Built for the World</p>
+
                 <div class="footer-bottom">
-                    <p class="footer-copyright">&copy; 2026 Odessis. All rights reserved.</p>
+                    <p class="footer-copyright">&copy; 2026 Odessis Lab. All rights reserved.</p>
                     <button class="back-to-top" aria-label="Back to top">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="18 15 12 9 6 15"/>
@@ -591,7 +648,6 @@
 
     <!-- Scripts -->
     <script src="js/waveform.js" defer></script>
-    <script src="js/audio-player.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>
