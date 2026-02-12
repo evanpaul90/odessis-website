@@ -492,10 +492,11 @@
                 <div class="notify-section reveal" data-delay="400">
                     <h3>Get Notified on New Releases</h3>
                     <p>Be the first to know when we drop new music, announce events, or launch on new platforms.</p>
-                    <form class="notify-form" id="notify-form">
-                        <input type="email" placeholder="your@email.com" class="notify-input" required>
+                    <form class="notify-form" id="notify-form" data-endpoint="https://script.google.com/macros/s/AKfycbwAxiXWzPUvSjsEmNzUvAcog66qs62JdrvYSDMD2AaGpoQeUel6_Ru9FF5A0cxPSYHS/exec">
+                        <input type="email" name="email" placeholder="your@email.com" class="notify-input" required>
                         <button type="submit" class="notify-btn">Notify Me</button>
                     </form>
+                    <p class="notify-status" id="notify-status" aria-live="polite"></p>
                 </div>
             </div>
         </section>
@@ -553,7 +554,7 @@
                     </div>
 
                     <div class="reveal-right" data-delay="200">
-                        <form class="contact-form" id="contact-form" novalidate>
+                        <form class="contact-form" id="contact-form" novalidate data-endpoint="https://script.google.com/macros/s/AKfycbwAxiXWzPUvSjsEmNzUvAcog66qs62JdrvYSDMD2AaGpoQeUel6_Ru9FF5A0cxPSYHS/exec">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
@@ -599,6 +600,9 @@
                                     <polyline points="22 4 12 14.01 9 11.01"/>
                                 </svg>
                                 <span>Message sent successfully. We'll be in touch soon.</span>
+                            </div>
+                            <div class="form-alert" id="form-error" role="alert">
+                                Could not send your message right now. Please try again in a minute.
                             </div>
                         </form>
                     </div>

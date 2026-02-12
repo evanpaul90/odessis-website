@@ -1235,6 +1235,21 @@ section {
     transform: translateY(-1px);
 }
 
+.notify-status {
+    min-height: 20px;
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.notify-status.success {
+    color: var(--color-success);
+}
+
+.notify-status.error {
+    color: var(--color-error);
+}
+
 /* ================================================
    13. CONTACT SECTION
    ================================================ */
@@ -1463,6 +1478,20 @@ section {
 
 .form-success.visible {
     display: flex;
+}
+
+.form-alert {
+    display: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 89, 89, 0.35);
+    background: rgba(255, 89, 89, 0.08);
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+}
+
+.form-alert.visible {
+    display: block;
 }
 
 /* ================================================

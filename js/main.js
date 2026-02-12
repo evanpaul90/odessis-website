@@ -230,10 +230,50 @@
     // ========================================
     var contactForm = document.getElementById('contact-form');
     var formSuccess = document.getElementById('form-success');
+    var formError = document.getElementById('form-error');
+    var notifyForm = document.getElementById('notify-form');
+    var notifyStatus = document.getElementById('notify-status');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var contactSubmitDefaultHtml = 'Send Message <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    var notifyDefaultText = 'Notify Me';
+
+    function serializePayload(payload) {
+        var parts = [];
+        Object.keys(payload).forEach(function (key) {
+            var value = payload[key];
+            parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(value == null ? '' : String(value)));
+        });
+        return parts.join('&');
+    }
+
+    function getAppsScriptEndpoint(formElement) {
+        var endpointFromForm = formElement ? formElement.getAttribute('data-endpoint') : '';
+        var endpointFromBody = document.body ? document.body.getAttribute('data-apps-script-endpoint') : '';
+        return endpointFromForm || endpointFromBody || '';
+    }
+
+    function sendToAppsScript(formElement, payload) {
+        var endpoint = getAppsScriptEndpoint(formElement);
+        if (!endpoint || endpoint.indexOf('REPLACE_WITH_WEBAPP_ID') !== -1) {
+            return Promise.reject(new Error('Apps Script endpoint is not configured.'));
+        }
+
+        return fetch(endpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: serializePayload(payload)
+        });
+    }
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+
+            if (formSuccess) formSuccess.classList.remove('visible');
+            if (formError) formError.classList.remove('visible');
 
             var isValid = true;
             var groups = contactForm.querySelectorAll('.form-group');
@@ -251,7 +291,6 @@
                 }
 
                 if (input.type === 'email' && input.value.trim()) {
-                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(input.value.trim())) {
                         group.classList.add('error');
                         isValid = false;
@@ -265,21 +304,38 @@
             });
 
             if (isValid) {
-                // Show success message (no real backend)
                 var submitBtn = contactForm.querySelector('.form-submit');
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
 
-                setTimeout(function () {
+                var payload = {
+                    form_type: 'contact',
+                    submitted_at: new Date().toISOString(),
+                    name: (contactForm.querySelector('#name') || {}).value || '',
+                    email: (contactForm.querySelector('#email') || {}).value || '',
+                    project_type: (contactForm.querySelector('#project-type') || {}).value || '',
+                    message: (contactForm.querySelector('#message') || {}).value || '',
+                    page_url: window.location.href,
+                    referrer: document.referrer || '',
+                    user_agent: navigator.userAgent
+                };
+
+                sendToAppsScript(contactForm, payload).then(function () {
                     contactForm.reset();
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Send Message <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-                    formSuccess.classList.add('visible');
+                    submitBtn.innerHTML = contactSubmitDefaultHtml;
+
+                    if (formSuccess) formSuccess.classList.add('visible');
 
                     setTimeout(function () {
-                        formSuccess.classList.remove('visible');
+                        if (formSuccess) formSuccess.classList.remove('visible');
                     }, 5000);
-                }, 1200);
+                }).catch(function (error) {
+                    console.error('Contact form submit failed:', error);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = contactSubmitDefaultHtml;
+                    if (formError) formError.classList.add('visible');
+                });
             }
         });
 
@@ -287,9 +343,11 @@
         contactForm.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(function (input) {
             input.addEventListener('input', function () {
                 this.closest('.form-group').classList.remove('error');
+                if (formError) formError.classList.remove('visible');
             });
             input.addEventListener('change', function () {
                 this.closest('.form-group').classList.remove('error');
+                if (formError) formError.classList.remove('visible');
             });
         });
     }
@@ -297,23 +355,76 @@
     // ========================================
     // NOTIFY FORM
     // ========================================
-    var notifyForm = document.getElementById('notify-form');
-
     if (notifyForm) {
         notifyForm.addEventListener('submit', function (e) {
             e.preventDefault();
             var input = notifyForm.querySelector('.notify-input');
             var btn = notifyForm.querySelector('.notify-btn');
-            if (input && input.value.trim()) {
+
+            if (!input || !btn) return;
+
+            var email = input.value.trim();
+            if (!emailRegex.test(email)) {
+                if (notifyStatus) {
+                    notifyStatus.textContent = 'Enter a valid email address.';
+                    notifyStatus.className = 'notify-status error';
+                }
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            if (notifyStatus) {
+                notifyStatus.textContent = '';
+                notifyStatus.className = 'notify-status';
+            }
+
+            var payload = {
+                form_type: 'notify',
+                submitted_at: new Date().toISOString(),
+                email: email,
+                page_url: window.location.href,
+                referrer: document.referrer || '',
+                user_agent: navigator.userAgent
+            };
+
+            sendToAppsScript(notifyForm, payload).then(function () {
+                btn.disabled = false;
                 btn.textContent = 'Subscribed!';
                 btn.style.background = 'var(--color-success)';
                 input.value = '';
+
+                if (notifyStatus) {
+                    notifyStatus.textContent = 'Subscribed. Thanks for joining.';
+                    notifyStatus.className = 'notify-status success';
+                }
+
                 setTimeout(function () {
-                    btn.textContent = 'Notify Me';
+                    btn.textContent = notifyDefaultText;
                     btn.style.background = '';
                 }, 3000);
-            }
+            }).catch(function (error) {
+                console.error('Notify form submit failed:', error);
+                btn.disabled = false;
+                btn.textContent = notifyDefaultText;
+                btn.style.background = '';
+                if (notifyStatus) {
+                    notifyStatus.textContent = 'Could not subscribe right now. Please try again.';
+                    notifyStatus.className = 'notify-status error';
+                }
+            });
         });
+
+        var notifyInput = notifyForm.querySelector('.notify-input');
+        if (notifyInput) {
+            notifyInput.addEventListener('input', function () {
+                if (notifyStatus) {
+                    notifyStatus.textContent = '';
+                    notifyStatus.className = 'notify-status';
+                }
+            });
+        }
     }
 
     // ========================================
