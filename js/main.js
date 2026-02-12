@@ -237,15 +237,6 @@
     var contactSubmitDefaultHtml = 'Send Message <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
     var notifyDefaultText = 'Notify Me';
 
-    function serializePayload(payload) {
-        var parts = [];
-        Object.keys(payload).forEach(function (key) {
-            var value = payload[key];
-            parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(value == null ? '' : String(value)));
-        });
-        return parts.join('&');
-    }
-
     function getAppsScriptEndpoint(formElement) {
         var endpointFromForm = formElement ? formElement.getAttribute('data-endpoint') : '';
         var endpointFromBody = document.body ? document.body.getAttribute('data-apps-script-endpoint') : '';
@@ -258,13 +249,60 @@
             return Promise.reject(new Error('Apps Script endpoint is not configured.'));
         }
 
-        return fetch(endpoint, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            body: serializePayload(payload)
+        return new Promise(function (resolve, reject) {
+            var iframeName = 'odessis-apps-script-' + Date.now();
+            var iframe = document.createElement('iframe');
+            var form = document.createElement('form');
+            var hasSubmitted = false;
+            var isDone = false;
+
+            function cleanup() {
+                if (isDone) return;
+                isDone = true;
+                setTimeout(function () {
+                    if (form.parentNode) form.parentNode.removeChild(form);
+                    if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+                }, 50);
+            }
+
+            iframe.name = iframeName;
+            iframe.style.display = 'none';
+            form.method = 'POST';
+            form.action = endpoint;
+            form.target = iframeName;
+            form.style.display = 'none';
+
+            Object.keys(payload).forEach(function (key) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = payload[key] == null ? '' : String(payload[key]);
+                form.appendChild(input);
+            });
+
+            iframe.addEventListener('load', function () {
+                if (!hasSubmitted) return;
+                cleanup();
+                resolve();
+            });
+
+            iframe.addEventListener('error', function () {
+                cleanup();
+                reject(new Error('Apps Script form submission failed.'));
+            });
+
+            document.body.appendChild(iframe);
+            document.body.appendChild(form);
+            hasSubmitted = true;
+            form.submit();
+
+            // Fallback resolve for browsers where cross-origin iframe load is suppressed.
+            setTimeout(function () {
+                if (!isDone) {
+                    cleanup();
+                    resolve();
+                }
+            }, 2500);
         });
     }
 
